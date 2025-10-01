@@ -34,16 +34,11 @@ Follow these instructions [link](https://netboxlabs.com/docs/netbox/installation
     - Create Netbox superuser: 
     ``python3 manage.py createsuperuser``
 - **Gunicorn**
+    If you rather use uWSGI its also provided on the guide, I used Gunicorn.
     Setup gunicorn folder on the right path:
     ``sudo cp -v /opt/netbox/contrib/*.service /etc/systemd/system/``
     Then enable the both netbox and netbox-rq services:
     ``sudo systemctl enable --now netbox netbox-rq``
-- **uWSGI**
-    Install pyuwsgi package.
-    Add it then to ``local_requirements.txt``
-    Setup uWSGI folder on the right path:
-    ``sudo cp -v /opt/netbox/contrib/*.service /etc/systemd/system/``
-    Reload daemon
 - **HTTPS Server**
     Obtain an SSL Certificate:
     ``sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
