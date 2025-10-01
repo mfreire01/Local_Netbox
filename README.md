@@ -56,3 +56,24 @@ Follow these instructions [link](https://netboxlabs.com/docs/netbox/installation
 
 
     With this done you should be able to access netbox server using the server name specified.
+    
+    ## Scripts
+    Both scripts are located at ``/netbox/netbox/scripts``
+    #### filter_add.py
+    This script filter Sites by status and can be imported inside netbox using its GUI at:
+     ``https:<netbox>/extras/scripts/add/``
+    **Run example:**
+    ![filter_add.py example run](netbox/netbox/images/filter_add_example.png)
+    #### api_query.py
+    This script on the other hand is thought to be run through the terminal instead of the GUI and its porpuse its to query sites by status using Netbox API directly.
+    **Run example:**
+
+```bash
+    python /opt/netbox/netbox/netbox/scripts/api_query.py planned
+```
+**Output:**
+```bash
+    Sites with status 'planned':
+    - Site 1 (Slug: site_1, ID: 2)
+    - Site 2 (Slug: site_2, ID: 3)
+```
